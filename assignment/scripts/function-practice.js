@@ -26,14 +26,14 @@ function addNumbers(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
   return firstNumber + secondNumber;
 }
-console.log(addNumbers(3, 4));
+console.log(`addNumbers - should say 7: `, addNumbers(3, 4));
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(num1, num2, num3) {
   return num1 * num2 * num3
 }
 
-console.log(multiplyThree(3, 3, 2));
+console.log(`multiplayThree - should say 18: `, multiplyThree(3, 3, 2));
 
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
@@ -52,7 +52,7 @@ console.log('isPositive - should say false', isPositive(-3));
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-qSix = ['22', '4309', '635', '838', '6', '64'];
+qSix = [22, 4309, 635, 838, 15, 64];
 
 function getLast(array) {
   return array.pop();
@@ -60,7 +60,7 @@ function getLast(array) {
     return;
   }
 }
-console.log(getLast(qSix));
+console.log(`getLast -- should be 64: `, getLast(qSix));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
@@ -73,7 +73,7 @@ function find(value, array) {
   return false;
 }
 
-console.log(find('6', qSix));
+console.log(`find function looking for the number six, should be false: `, find('6', qSix));
 
 
 // ----------------------
@@ -82,23 +82,41 @@ console.log(find('6', qSix));
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  return letter === string[0] ? true : false;
 }
+
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+
+
+function sumAll(array) {
   let sum = 0
   // TODO: loop to add items
+  for (i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
   return sum;
 }
 
+console.log(`Sum of 22, 4309, 635, 838 and 15 is: ${sumAll(qSix)}`);
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+qSix = [22, -4309, -635, 838, -6, 64];
+newArray = [];
 
-
+function positiveNum(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+positiveNum(qSix);
+console.log(newArray);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
