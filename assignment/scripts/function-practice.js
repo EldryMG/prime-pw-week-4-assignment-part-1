@@ -53,6 +53,7 @@ console.log('isPositive - should say false', isPositive(-3));
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 qSix = [22, 4309, 635, 838, 15, 64];
+emptyArr = []
 
 function getLast(array) {
   return array.pop();
@@ -61,6 +62,8 @@ function getLast(array) {
   }
 }
 console.log(`getLast -- should be 64: `, getLast(qSix));
+console.log(`getLast on an empty array -- should return undefined: `, getLast(emptyArr));
+
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
@@ -116,8 +119,25 @@ function positiveNum(array) {
   return newArray;
 }
 positiveNum(qSix);
-console.log(newArray);
+console.log(`Array with all positive numbers: `, newArray);
+console.log(`Input array: `, qSix);
+
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it
+
+//Write a function that takes two values and returns the lowest of the two.
+
+function lowestNum(num1, num2){
+  if (num1>num2){
+    return num2;
+  } else {
+    return num1;
+  }
+}
+
+console.log(`Should return 2: `, lowestNum(2,5));
+console.log(`Should return 23: `, lowestNum(55,23));
+console.log(`Should return -10: `, lowestNum(0,-10));
+console.log(`Should return 4: `, lowestNum(4,4));
